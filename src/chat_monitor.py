@@ -23,11 +23,13 @@ class ChatMonitor:
             await asyncio.sleep(3)
 
     async def fetchcallback(self, chatdata):
-        for c in chatdata.items:
-            # print(f"{c.datetime} [{c.author.name}]- {c.message}")
-            if c.author.channelId in channels and \
-                (channels[c.author.channelId]['region'] == Region.JPN or
-                 channels[self.video_info.get_channel_id()]['region'] == Region.JPN):
-
-                tweet(c, self.video_id, self.video_info)
+        for chat in chatdata.items:
+            # print(f"{chat.datetime} [{chat.author.name}]- {chat.message}")
+            if self.is_valid_chat(chat):
+                tweet(chat, self.video_id, self.video_info)
             await chatdata.tick_async()
+
+    def is_valid_chat(self, chat):
+        return chat.author.channelId in channels and \
+            (channels[chat.author.channelId]['region'] == Region.JPN or
+             channels[self.video_info.get_channel_id()]['region'] == Region.JPN)
