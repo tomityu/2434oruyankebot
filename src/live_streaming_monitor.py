@@ -14,22 +14,20 @@ def search_live_streaming(youtube_service, q, event_type, monitoring_list):
     logger.info(
         f"{datetime.now().strftime('%Y/%m/%d %H:%M:%S')} | {event_type} search start.")
     search_response = youtube_service.execute_search_list(q, event_type)
-    new_item_count = 0
-    for search_result in search_response['items']:
-        if search_result['snippet']['channelId'] in channels:
-            video_id = search_result['id']['videoId']
+    temp_monitoring_list = {}
+    for item in search_response['items']:
+        if item['snippet']['channelId'] in channels:
+            video_id = item['id']['videoId']
             try:
                 video_info = VideoInfo(video_id=video_id)
-                if (not video_id in monitoring_list) and (not video_id in exclude_video_ids) and (not video_info.get_duration()):
+                if is_valid_streaming(video_id, monitoring_list, temp_monitoring_list, video_info):
                     logger.info(
-                        f"New {event_type}! | {video_id} | {search_result['snippet']['channelTitle']} | {search_result['snippet']['title']}")
-                    new_item_count += 1
-                    monitoring_list[video_id] = {
-                        'channel': search_result['snippet']['channelTitle'], 'title': search_result['snippet']['title']}
+                        f"New {event_type}! | {video_id} | {item['snippet']['channelTitle']} | {item['snippet']['title']}")
+                    temp_monitoring_list[video_id] = {
+                        'channel': item['snippet']['channelTitle'], 'title': item['snippet']['title']}
                     pid = os.fork()
                     if pid == 0:  # No pid. so this is child process!
-                        monitor = ChatMonitor(video_id, video_info)
-                        monitor.start()
+                        ChatMonitor(video_id, video_info).start()
                         monitoring_value = monitoring_list.pop(video_id)
                         logger.info(
                             f"Livestreaming has terminated! => {datetime.now().strftime('%Y/%m/%d %H:%M:%S')} | {video_id} | {monitoring_value['channel']} | {monitoring_value['title']}")
@@ -39,8 +37,9 @@ def search_live_streaming(youtube_service, q, event_type, monitoring_list):
                 logger.error(e)
                 logger.error(video_id)
                 continue
-    if new_item_count:
-        logger.info(f'{new_item_count} new {event_type}s found!')
+    if temp_monitoring_list:
+        logger.info(f'{len(temp_monitoring_list)} new {event_type}s found!')
+        monitoring_list.update(temp_monitoring_list)
     else:
         logger.info(f'There was no new {event_type}.')
 
@@ -50,3 +49,7 @@ def print_monitoring_list(monitoring_list):
     for key, value in monitoring_list.items():
         logger.info(f"{key} | {value['channel']} | {value['title']}")
     logger.info(f'---{len(monitoring_list)} items---')
+
+
+def is_valid_streaming(video_id, monitoring_list, temp_monitoring_list, video_info):
+    return (not video_id in monitoring_list) and (not video_id in temp_monitoring_list) and (not video_id in exclude_video_ids) and (not video_info.get_duration())

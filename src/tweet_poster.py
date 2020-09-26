@@ -1,4 +1,5 @@
 from datetime import datetime
+from copy import deepcopy
 from pytchat import VideoInfo
 from twitter import Twitter, OAuth
 from twitter_text import parse_tweet
@@ -23,6 +24,15 @@ def tweet(chat, video_id, video_info):
     author_name = channels[chat.author.channelId]['name']
     tag = channels[video_info.get_channel_id()]['tag']
 
+    if '#ひみつ' in chat.message:
+        logger.info('### secret... ###')
+        logger.info(video_id)
+        logger.info(video_title)
+        logger.info(author_name)
+        logger.info(chat.message)
+        logger.info(tag)
+        return
+
     if chat.type == 'textMessage':
         content = generate_text_content(
             chat, author_name, chat.message, video_id, video_title, tag)
@@ -41,15 +51,12 @@ def tweet(chat, video_id, video_info):
     logger.info(content)
     logger.info(f'---')
 
-    if '#ひみつ' in content:
-        logger.info('秘密にしてほしいみたい')
-    else:
-        t = Twitter(auth=OAuth(
-            TW_ACCESS_TOKEN, TW_ACCESS_TOKEN_SECRET, TW_API_KEY, TW_API_SECRET))
-        try:
-            statusUpdate = t.statuses.update(status=content)
-        except Exception as e:
-            logger.error(e)
+    t = Twitter(auth=OAuth(
+        TW_ACCESS_TOKEN, TW_ACCESS_TOKEN_SECRET, TW_API_KEY, TW_API_SECRET))
+    try:
+        statusUpdate = t.statuses.update(status=content)
+    except Exception as e:
+        logger.error(e)
 
 
 def generate_text_content(chat, author_name, message, video_id, video_title, tag):
@@ -97,7 +104,7 @@ def generate_newsponsor_content(chat, author_name, message, video_id, video_titl
 
 
 def check_content(content, generate_content, chat, author_name, message, video_id, video_title, tag):
-    parsed_tweet = parse_tweet(content)
+    parsed_tweet = parse_tweet(deepcopy(content))
     if parsed_tweet.valid:
         return content
     else:
@@ -107,15 +114,15 @@ def check_content(content, generate_content, chat, author_name, message, video_i
 
 
 def truncate_content(message, video_title, exceeded_length):
-    video_title_length = parse_tweet(video_title).weightedLength
+    video_title_length = parse_tweet(deepcopy(video_title)).weightedLength
     if exceeded_length < video_title_length - SHORTEST_LENGTH:
         return message, truncate(video_title, video_title_length - exceeded_length)
     else:
-        message_length = parse_tweet(message).weightedLength
+        message_length = parse_tweet(deepcopy(message)).weightedLength
         return truncate(message, message_length - (exceeded_length - (video_title_length - SHORTEST_LENGTH))), truncate(video_title, SHORTEST_LENGTH)
 
 
 def truncate(str, num_bytes):
-    while parse_tweet(str).weightedLength > num_bytes - 2:
+    while parse_tweet(deepcopy(str)).weightedLength > num_bytes - 2:
         str = str[:-1]
     return str + '…'
