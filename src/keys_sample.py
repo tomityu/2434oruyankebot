@@ -8,4 +8,3 @@ TW_ACCESS_TOKEN = 'ついったーのあくせすとーくん'
 TW_ACCESS_TOKEN_SECRET = 'ついったーのアクセストークンシークレット'
 TW_API_KEY = 'ツイッターのAPI Key'
 TW_API_SECRET = 'ツイッターのAPI Key シークレット'
-a
