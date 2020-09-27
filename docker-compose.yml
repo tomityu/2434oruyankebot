@@ -4,11 +4,10 @@ services:
     restart: always
     build: .
     command: >
-      bash -c "pip install -r src/requirements.txt &&
+      bash -c "pip install -r requirements.txt &&
       python3 src/main.py"
     container_name: 'python3'
     working_dir: '/root/'
     tty: true
     volumes:
-      - ./src:/root/src
-      - ./logs:/root/logs
+      - ./:/root/
