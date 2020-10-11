@@ -25,5 +25,7 @@ exclude_video_ids = [
     '-YRBXDWk21g',
     'B5Bf-q0a-Mw',
     '--HqZr-myiA',
-    '7sExrmNNrD8'
+    '7sExrmNNrD8',
+    '5QIidq_V7wQ',
+    'OaTwjNkmeAU'
 ]
