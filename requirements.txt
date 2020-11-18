@@ -21,7 +21,7 @@ multidict==4.7.6
 protobuf==3.13.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
-pytchat==0.3.2
+pytchat==0.4.7
 pytz==2020.1
 requests==2.24.0
 rfc3986==1.4.0
