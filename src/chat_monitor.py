@@ -26,7 +26,7 @@ class ChatMonitor:
         for chat in chatdata.items:
             # print(f"{chat.datetime} [{chat.author.name}]- {chat.message}")
             if self.is_valid_chat(chat):
-                for key, value in test.__dict__.items():
+                for key, value in chat.__dict__.items():
                     print(key, ':', value)
                 tweet(chat, self.video_id, self.video_info)
             await chatdata.tick_async()
