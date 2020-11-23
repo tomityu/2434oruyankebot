@@ -26,12 +26,12 @@ class ChatMonitor:
         for chat in chatdata.items:
             # print(f"{chat.datetime} [{chat.author.name}]- {chat.message}")
             if self.is_valid_chat(chat):
-                for key, value in chat.__dict__.items():
-                    print(key, ':', value))
+                for key, value in test.__dict__.items():
+                    print(key, ':', value)
                 tweet(chat, self.video_id, self.video_info)
             await chatdata.tick_async()
 
     def is_valid_chat(self, chat):
-        return chat.author.channelId in channels and
+        return chat.author.channelId in channels and \
             (channels[chat.author.channelId]['region'] == Region.JPN or
              channels[self.video_info.get_channel_id()]['region'] == Region.JPN)
