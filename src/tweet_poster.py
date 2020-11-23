@@ -86,8 +86,8 @@ def generate_superchat_content(chat, author_name, message, video_id, video_title
 def generate_supersticker_content(chat, author_name, message, video_id, video_title, tag):
     content = f'💕{author_name} posted supersticker!! {chat.amountString}💕\n'
     content += '\n'
-    content += f'[{chat.renderer["sticker"]["accessibility"]["accessibilityData"]["label"]}]\n'
-    content += '\n'
+    # content += f'[{chat.renderer["sticker"]["accessibility"]["accessibilityData"]["label"]}]\n'
+    # content += '\n'
     content += f'{video_title}\n'
     content += f'https://www.youtube.com/watch?v={video_id}\n'
     content += tag
