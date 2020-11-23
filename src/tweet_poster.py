@@ -24,6 +24,9 @@ def tweet(chat, video_id, video_info):
     author_name = channels[chat.author.channelId]['name']
     tag = channels[video_info.get_channel_id()]['tag']
 
+    for key, value in chat.__dict__.items():
+        logger.info(f"{key}: {value}")
+
     if '#ひみつ' in chat.message:
         logger.info('### secret... ###')
         logger.info(video_id)
