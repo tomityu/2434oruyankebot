@@ -25,8 +25,3 @@ def read(save_path):
             return imagefile.read()
     except Exception as e:
         logger.error(e)
-
-
-url = 'https://lh3.googleusercontent.com/5wOB_7MitsAPQG1vpCYSSLOLHdiRIwwsf97yfzW63YZihVf0B6MulS65DRFeftFul6rd6BNCxZ5h0wrIvkA=s40-rp'
-save_path = f'./images/{datetime.now()}.png'
-download(url, save_path)
