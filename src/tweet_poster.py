@@ -5,6 +5,7 @@ from twitter import Twitter, OAuth
 from twitter_text import parse_tweet
 from channel_list import channels
 from color import Color
+from image_manager import download, read
 from keys import TW_ACCESS_TOKEN, TW_ACCESS_TOKEN_SECRET, TW_API_KEY, TW_API_SECRET
 from logging import getLogger
 
@@ -24,9 +25,6 @@ def tweet(chat, video_id, video_info):
     author_name = channels[chat.author.channelId]['name']
     tag = channels[video_info.get_channel_id()]['tag']
 
-    for key, value in chat.__dict__.items():
-        logger.info(f"{key}: {value}")
-
     if '#ひみつ' in chat.message:
         logger.info('### secret... ###')
         logger.info(video_id)
@@ -39,25 +37,47 @@ def tweet(chat, video_id, video_info):
     if chat.type == 'textMessage':
         content = generate_text_content(
             chat, author_name, chat.message, video_id, video_title, tag)
+        post(content)
     elif chat.type == 'superChat':
         content = generate_superchat_content(
             chat, author_name, chat.message, video_id, video_title, tag)
+        post(content)
     elif chat.type == 'superSticker':
         content = generate_supersticker_content(
             chat, author_name, chat.message, video_id, video_title, tag)
+        post_with_media(content, chat.sticker)
     else:   # newSponsor
         content = generate_newsponsor_content(
             chat, author_name, chat.message, video_id, video_title, tag)
+        post(content)
 
     logger.info(f'---')
     logger.info(datetime.now().strftime('%Y/%m/%d %H:%M:%S'))
     logger.info(content)
     logger.info(f'---')
 
-    t = Twitter(auth=OAuth(
+
+def post(content):
+    tweeter = Twitter(auth=OAuth(
         TW_ACCESS_TOKEN, TW_ACCESS_TOKEN_SECRET, TW_API_KEY, TW_API_SECRET))
     try:
-        statusUpdate = t.statuses.update(status=content)
+        pass
+        tweeter.statuses.update(status=content)
+    except Exception as e:
+        logger.error(e)
+
+
+def post_with_media(content, image_url):
+    tweeter_upload = Twitter(domain='upload.twitter.com', auth=OAuth(
+        TW_ACCESS_TOKEN, TW_ACCESS_TOKEN_SECRET, TW_API_KEY, TW_API_SECRET))
+    tweeter = Twitter(auth=OAuth(
+        TW_ACCESS_TOKEN, TW_ACCESS_TOKEN_SECRET, TW_API_KEY, TW_API_SECRET))
+    save_path = f'./images/{datetime.now()}.png'
+    download(image_url, save_path)
+    image = read(save_path)
+    try:
+        image_id = tweeter_upload.media.upload(media=image)["media_id_string"]
+        tweeter.statuses.update(status=content, media_ids=[image_id])
     except Exception as e:
         logger.error(e)
 
@@ -89,8 +109,6 @@ def generate_superchat_content(chat, author_name, message, video_id, video_title
 def generate_supersticker_content(chat, author_name, message, video_id, video_title, tag):
     content = f'💕{author_name} posted supersticker!! {chat.amountString}💕\n'
     content += '\n'
-    # content += f'[{chat.renderer["sticker"]["accessibility"]["accessibilityData"]["label"]}]\n'
-    # content += '\n'
     content += f'{video_title}\n'
     content += f'https://www.youtube.com/watch?v={video_id}\n'
     content += tag
