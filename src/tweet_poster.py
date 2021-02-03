@@ -1,6 +1,5 @@
 from datetime import datetime
 from copy import deepcopy
-from pytchat import VideoInfo
 from twitter import Twitter, OAuth
 from twitter_text import parse_tweet
 from channel_list import channels
@@ -16,14 +15,9 @@ SHORTEST_LENGTH = 20
 LIMIT_LENGTH = 280
 
 
-def tweet(chat, video_id, video_info):
-    try:
-        video_info = VideoInfo(video_id=video_id)
-    except Exception as e:
-        logger.error(e)
-    video_title = video_info.get_title()
+def tweet(chat, video_id, video_title, host_channel_id):
     author_name = channels[chat.author.channelId]['name']
-    tag = channels[video_info.get_channel_id()]['tag']
+    tag = channels[host_channel_id]['tag']
 
     if '#ひみつ' in chat.message:
         logger.info('### secret... ###')

@@ -21,12 +21,27 @@ class YoutubeServices:
             result = self.youtube_services[self.index].execute_search_list(
                 q, event_type)
             logger.info(
-                f'index: {self.index}, YOUTUBE_API_KEY: {self.youtube_services[self.index].api_key}')
+                f'execute_search_list index: {self.index}')
         except Exception as e:
             logger.error(e)
-            if self.index == len(YOUTUBE_API_KEYS) - 1:
-                self.index = 0
-            else:
-                self.index += 1
+            increase_youtube_index()
             return self.execute_search_list(q, event_type)
         return result
+
+    def execute_videos_list(self, video_id):
+        try:
+            result = self.youtube_services[self.index].execute_videos_list(
+                video_id)
+            logger.info(
+                f'execute_videos_list index: {self.index} video_id: {video_id}')
+        except Exception as e:
+            logger.error(e)
+            increase_youtube_index()
+            return self.execute_videos_list(video_id)
+        return result
+
+    def increase_youtube_index():
+        if self.index == len(YOUTUBE_API_KEYS) - 1:
+            self.index = 0
+        else:
+            self.index += 1

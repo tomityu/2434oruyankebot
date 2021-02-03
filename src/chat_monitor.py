@@ -1,14 +1,15 @@
 from tweet_poster import tweet
 from channel_list import channels, Region
-from pytchat import LiveChatAsync, VideoInfo
+from pytchat import LiveChatAsync
 from concurrent.futures import CancelledError
 import asyncio
 
 
 class ChatMonitor:
-    def __init__(self, video_id, video_info):
+    def __init__(self, video_id, video_title, host_channel_id):
         self.video_id = video_id
-        self.video_info = video_info
+        self.video_title = video_title
+        self.host_channel_id = host_channel_id
 
     def start(self):
         try:
@@ -24,12 +25,15 @@ class ChatMonitor:
 
     async def fetchcallback(self, chatdata):
         for chat in chatdata.items:
-            # print(f"{chat.datetime} [{chat.author.name}]- {chat.message}")
+            # print(
+            #     f"{chat.datetime} [{chat.author.name}]- {chat.message} - {self.video_title}")
+            # for key, value in chat.__dict__.items():
+            #     print(key, ':', value)
             if self.is_valid_chat(chat):
-                tweet(chat, self.video_id, self.video_info)
+                tweet(chat, self.video_id, self.video_title, self.host_channel_id)
             await chatdata.tick_async()
 
     def is_valid_chat(self, chat):
         return chat.author.channelId in channels and \
             (channels[chat.author.channelId]['region'] == Region.JPN or
-             channels[self.video_info.get_channel_id()]['region'] == Region.JPN)
+             channels[self.host_channel_id]['region'] == Region.JPN)
