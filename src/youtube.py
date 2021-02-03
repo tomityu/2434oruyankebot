@@ -16,3 +16,9 @@ class Youtube:
             maxResults=50,
             eventType=event_type
         ).execute()
+
+    def execute_videos_list(self, video_id):
+        return self.youtube.videos().list(
+            part='liveStreamingDetails',
+            id=video_id
+        ).execute()

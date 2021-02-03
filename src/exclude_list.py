@@ -1,4 +1,4 @@
-exclude_video_ids = [
+exclude_list = [
     'PHADGYt_dWQ',
     'sT6BJXq8XMw',
     'vR70dy8ceK4',
