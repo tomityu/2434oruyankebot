@@ -24,7 +24,7 @@ class YoutubeServices:
                 f'execute_search_list index: {self.index}')
         except Exception as e:
             logger.error(e)
-            increase_youtube_index()
+            self.increase_youtube_index()
             return self.execute_search_list(q, event_type)
         return result
 
@@ -36,11 +36,11 @@ class YoutubeServices:
                 f'execute_videos_list index: {self.index} video_id: {video_id}')
         except Exception as e:
             logger.error(e)
-            increase_youtube_index()
+            self.increase_youtube_index()
             return self.execute_videos_list(video_id)
         return result
 
-    def increase_youtube_index():
+    def increase_youtube_index(self):
         if self.index == len(YOUTUBE_API_KEYS) - 1:
             self.index = 0
         else:
