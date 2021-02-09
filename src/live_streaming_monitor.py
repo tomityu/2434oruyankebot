@@ -1,4 +1,5 @@
 import os
+import traceback
 from datetime import datetime
 from channel_list import channels
 from chat_monitor import ChatMonitor
@@ -40,6 +41,7 @@ def search_live_streaming(youtube_service, q, event_type, monitoring_dict, termi
                         os._exit(status=0)
             except Exception as e:
                 logger.error(e)
+                logger.error(traceback.format_exc())
                 logger.error(video_id)
                 continue
     count = len(monitoring_dict) - temp_count
