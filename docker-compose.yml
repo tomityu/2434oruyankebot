@@ -1,7 +1,6 @@
 version: '3'
 services:
   python3:
-    restart: always
     build: .
     command: >
       bash -c "
