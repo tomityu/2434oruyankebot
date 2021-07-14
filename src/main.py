@@ -21,7 +21,7 @@ if __name__ == '__main__':
         youtube_service = YoutubeServices()
         monitoring_dict = Manager().dict()
         terminated_list = Manager().list()
-        q = 'にじさんじ OR Nijisanji OR 月ノ美兎 OR 笹木咲 OR 葛葉 OR 雨森小夜 OR リゼ OR 叶 OR 社築 OR 加賀美 OR 黛 OR 舞元 OR 剣持刀也 OR 三枝 OR イブラヒム OR 不破 OR Gilzaren OR 宇志海 OR 天開司 OR ふぇありす OR 瀬戸'
+        q = 'にじさんじ OR Nijisanji OR 月ノ美兎 OR 笹木咲 OR 葛葉 OR 雨森小夜 OR リゼ OR kanae OR 社築 OR 加賀美 OR 黛 OR 舞元 OR 剣持刀也 OR 三枝 OR イブラヒム OR 不破 OR Gilzaren OR JuvveL OR 天開司 OR ふぇありす OR 瀬戸'
         flip = True
 
         def handler(signum, frame):

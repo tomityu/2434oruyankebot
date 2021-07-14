@@ -184,4 +184,5 @@ channels = {
     'UCGCb4Dts1uYtciya3wvd6dg': {'name': 'いわながちゃん🌖', 'tag': '', 'region': Region.JPN},
     'UCX7YkU9nEeaoZbkVLVajcMg': {'name': 'にじさんじ公式🌈🕒', 'tag': '', 'region': Region.JPN},
     'UCz6vnIbgiqFT9xUcD6Bp65Q': {'name': 'ChroNoiR🔫🎲', 'tag': '', 'region': Region.JPN},
+    'UC_D2DNy-KUNQJ_NGMppgmyg': {'name': 'JuvveL💎', 'tag': '', 'region': Region.JPN},
 }
