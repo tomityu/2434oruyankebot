@@ -46,5 +46,7 @@ exclude_list = [
     'FMpsHBGhWBM',
     '10f-iqQNLeI',
     '7_V6UmL4pG4',
-    'HnBCpQD4P1c'
+    'HnBCpQD4P1c',
+    'nwNV-ORYPa4',
+    'y3qJ0h4oYGo'
 ]
