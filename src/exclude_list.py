@@ -48,5 +48,9 @@ exclude_list = [
     '7_V6UmL4pG4',
     'HnBCpQD4P1c',
     'nwNV-ORYPa4',
-    'y3qJ0h4oYGo'
+    'y3qJ0h4oYGo',
+    'p8TaqfS3ad0',
+    '-AUpJLTR0vk',
+    'cylM5MJ97to',
+    'fn44d7RtP1g'
 ]
