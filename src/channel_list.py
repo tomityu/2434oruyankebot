@@ -196,7 +196,7 @@ channels = {
     'UCCHH0nWYXFZmtDS_4tvMxHQ': {'name': '양나리/Yang Nari📌', 'tag': '#Nari_live', 'region': Region.KOR},
     'UClS6k3w1sPwlVFqK3-yID5A': {'name': '류하리/Ryu Hari👁‍🗨', 'tag': '#hari_live', 'region': Region.KOR},
     'UCi6nV5Z2dzFuXBzLG3P9zqQ': {'name': '신기루/Shin Kiru🌫', 'tag': '#kiru_on', 'region': Region.KOR},
-    'UCnzZmBOSrQf2wDBbnsDajVw': {'name': '오지유Oh Jiyu⚜️', 'tag': '#PREELIVE', 'region': Region.KOR},
+    'UCnzZmBOSrQf2wDBbnsDajVw': {'name': '오지유/Oh Jiyu⚜️', 'tag': '#PREELIVE', 'region': Region.KOR},
     'UCeGendL8CO5RkffB6IFwHow': {'name': '세피나/Seffyna💗🌕', 'tag': '#Seffy_live', 'region': Region.KOR},
     'UCyqzU2nq7eGNi4kN0uHx7TA': {'name': '송미아/Song Mia🍡', 'tag': '#mia_on', 'region': Region.KOR},
     'UCLjx3lqIkYkPCBJop8czJ2A': {'name': '반하다/Ban Hada🏴‍☠️', 'tag': '#hada_live', 'region': Region.KOR},
