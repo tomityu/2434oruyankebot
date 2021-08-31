@@ -25,8 +25,7 @@ class ChatMonitor:
 
     async def fetchcallback(self, chatdata):
         for chat in chatdata.items:
-            # print(
-            #     f"{chat.datetime} [{chat.author.name}]- {chat.message} - {self.video_title}")
+            # print(f"{chat.datetime} [{chat.author.name}]- {chat.message} - {self.video_title}")
             # for key, value in chat.__dict__.items():
             #     print(key, ':', value)
             if self.is_valid_chat(chat):
