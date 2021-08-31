@@ -38,8 +38,6 @@ def search_live_streaming(youtube_service, q, event_type, monitoring_dict, termi
                             f"Livestreaming has terminated! => {datetime.now().strftime('%Y/%m/%d %H:%M:%S')} | {video_id} | {monitoring_value['channel']} | {monitoring_value['title']}")
                         print_monitoring_dict(monitoring_dict)
                         os._exit(status=0)
-                    else:
-                        os.waitpid(pid, os.WNOHANG)
             except Exception as e:
                 logger.error(e)
                 logger.error(video_id)
