@@ -72,7 +72,7 @@ channels = {
     # ゲーマーズ
     'UCspv01oxUFf_MTSipURRhkA': {'name': '叶🔫', 'tag': '#かなえーる', 'region': Region.JPN},
     'UCBi8YaVyZpiKWN3_Z0dCTfQ': {'name': '赤羽葉子💀', 'tag': '#赤羽絶況チュウ', 'region': Region.JPN},
-    'UC0g1AE0DOjBYnLhkgoRWN1w': {'name': '本間ひまわり🌻', 'tag': '#ひま生', 'region': Region.JPN},
+    'UC0g1AE0DOjBYnLhkgoRWN1w': {'name': '本間ひまわり🌻', 'tag': '#ひまなま', 'region': Region.JPN},
     'UCoztvTULBYd3WmStqYeoHcA': {'name': '笹木咲🎋', 'tag': '#笹らいぶ', 'region': Region.JPN},
     'UC_4tXjqecqox5Uc05ncxpxg': {'name': '椎名唯華👻', 'tag': '#しい生', 'region': Region.JPN},
     'UCSFCh5NL4qXrAy9u-u2lX3g': {'name': '葛葉🎲', 'tag': '#くずなま', 'region': Region.JPN},
