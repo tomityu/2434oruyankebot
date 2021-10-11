@@ -52,5 +52,6 @@ exclude_list = [
     'p8TaqfS3ad0',
     '-AUpJLTR0vk',
     'cylM5MJ97to',
-    'fn44d7RtP1g'
+    'fn44d7RtP1g',
+    '9WY3dRIZ76w'
 ]
