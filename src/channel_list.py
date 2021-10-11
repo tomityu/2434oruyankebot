@@ -175,6 +175,10 @@ channels = {
     'UCV1xUwfM2v2oBtT3JNvic3w': {'name': 'Selen Tatsuki🏆', 'tag': '#TatsuTalk', 'region': Region.ENG},
     'UC4WvIIAo89_AzGUh1AZ6Dkg': {'name': 'Rosemi Lovelock🌹', 'tag': '', 'region': Region.ENG},
     'UCgA2jKRkqpY_8eysPUs8sjw': {'name': 'Petra Gurin🐧❄️', 'tag': '#PetraOnAir #ペト配信', 'region': Region.ENG},
+    'UCR6qhsLpn62WVxCBK1dkLow': {'name': 'Enna Alouette🕊️🎐', 'tag': '#ennalively', 'region': Region.ENG},
+    'UCkieJGn3pgJikVW8gmMXE2w': {'name': 'Nina Kosaka🎰', 'tag': '#KosaCast', 'region': Region.ENG},
+    'UCBURM8S4LH7cRZ0Clea9RDA': {'name': 'Reimu Endou👻🎼', 'tag': '#ReimuLive', 'region': Region.ENG},
+    'UC47rNmkDcNgbOcM-2BwzJTQ': {'name': 'Millie Parfait🪄', 'tag': '#witchwatch', 'region': Region.ENG},
 
     # nijisanji kr
     'UCStzBFfjwFYb0qSYHnzFZvw': {'name': 'NIJISANJI KR Official', 'tag': '', 'region': Region.KOR},

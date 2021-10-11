@@ -134,3 +134,5 @@ keys.py
 
 # supersticker
 *.png
+
+.bash_history
