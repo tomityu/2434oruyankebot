@@ -63,7 +63,7 @@ channels = {
     'UCqQV8xEBWd5SVZBLlYrS_5Q': {'name': '月見しずく✨', 'tag': '#お月見時', 'region': Region.JPN},
     'UChUJbHiTVeGrSkTdBzVfNCQ': {'name': 'ジョー・力一🤡🎈', 'tag': '#常套句', 'region': Region.JPN},
     'UCtAvQ5U0aXyKwm2i4GqFgJg': {'name': '春崎エアル🍭', 'tag': '#ハルライブ', 'region': Region.JPN},
-    'UCoM_XmK45j504hfUWvN06Qg': {'name': '成瀬鳴🍥', 'tag': '#鳴onlive', 'region': Region.JPN},
+    'UCoM_XmK45j504hfUWvN06Qg': {'name': '成瀬鳴🎙', 'tag': '#鳴onlive', 'region': Region.JPN},
     'UCbc8fwhdUNlqi-J99ISYu4A': {'name': 'ベルモンド・バンデラス🥃', 'tag': '#ようこそデラスへ', 'region': Region.JPN},
     'UCvzVB-EYuHFXHZrObB8a_Og': {'name': '矢車りね🌽', 'tag': '#矢車観察日記', 'region': Region.JPN},
     'UCTIE7LM5X15NVugV7Krp9Hw': {'name': '夢追翔🎤', 'tag': '#翔onAir', 'region': Region.JPN},
