@@ -1,3 +1,4 @@
+import sys
 from tweet_poster import tweet
 from channel_list import channels, Region
 from pytchat import LiveChatAsync
@@ -37,3 +38,11 @@ class ChatMonitor:
         return chat.author.channelId in channels and \
             (channels[chat.author.channelId]['region'] == Region.JPN or
              channels[self.host_channel_id]['region'] == Region.JPN)
+
+
+if __name__ == '__main__':
+    args = sys.argv
+    video_id = args[1]
+    title = args[2]
+    channelId = args[3]
+    ChatMonitor(video_id, title, channelId).start()

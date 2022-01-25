@@ -56,7 +56,7 @@ def post(content):
         TW_ACCESS_TOKEN, TW_ACCESS_TOKEN_SECRET, TW_API_KEY, TW_API_SECRET))
     try:
         pass
-        tweeter.statuses.update(status=content)
+        # tweeter.statuses.update(status=content)
     except Exception as e:
         logger.error(e)
 
