@@ -31,7 +31,7 @@ def search_live_streaming(youtube_service, q, event_type, monitoring_dict, termi
                     monitoring_dict[video_id] = {
                         'channel': item['snippet']['channelTitle'], 'title': item['snippet']['title']}
                     subprocess.check_call(
-                        ['python3' 'src/chat_monitor.py', video_id, item['snippet']['title'], item['snippet']['channelId']])
+                        ['python3', 'src/chat_monitor.py', video_id, item['snippet']['title'], item['snippet']['channelId']])
             except Exception as e:
                 logger.error(e)
                 logger.error(video_id)
