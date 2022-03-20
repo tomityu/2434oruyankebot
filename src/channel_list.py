@@ -140,9 +140,14 @@ channels = {
     # 21年組
     'UC8oPnditPSp5lZu45fnXWCA': {'name': 'アクシア・クローネ🐈‍⬛', 'tag': '#AXIALIVE', 'region': Region.JPN},
     'UCgmFrRcyH7d1zR9sIVQhFow': {'name': 'ローレン・イロアス🗝💸', 'tag': '#Iroastream', 'region': Region.JPN},
-    'UC-6rZgmxZSIbq786j3RD5ow': {'name': 'レオス•ヴィンセント🥼🌱😺', 'tag': '＃レオスの実験室', 'region': Region.JPN},
+    'UC-6rZgmxZSIbq786j3RD5ow': {'name': 'レオス•ヴィンセント🥼🌱😺', 'tag': '#レオスの実験室', 'region': Region.JPN},
     'UCqjTqdVlvIipZXIKeCkHKUA': {'name': 'オリバー・エバンス🍵', 'tag': '#オリバー講義中', 'region': Region.JPN},
     'UCRm6lqtdxs_Qo6HeL-SRQ-w': {'name': 'レイン・パターソン❤️‍🔥', 'tag': '#レイン任務中', 'region': Region.JPN},
+
+    # 22年組
+    'UCAQDFeCTVdx90GtwohwjHzQ': {'name': '天ヶ瀬むゆ💭', 'tag': '#夢遊旅行', 'region': Region.JPN},
+    'UCtHY-tP0dyykhTRMmnfPs_g': {'name': '海妹四葉🍀', 'tag': '#428LIVE', 'region': Region.JPN},
+    'UCe22Bcwd_GCpTjLxn83zl7A': {'name': '先斗寧🫐', 'tag': '#ぽんとらいぶ', 'region': Region.JPN},
 
     # nijisanji id
     'UCbLgcjfsUaCUgJh9SVit8kw': {'name': 'NIJISANJI ID Official', 'tag': '', 'region': Region.INA},
@@ -162,6 +167,19 @@ channels = {
     'UCijNnZ-6m8g85UGaRAWuw7g': {'name': 'Nagisa Arcinia🍭🐥', 'tag': '#Nagisa_ArcLive', 'region': Region.INA},
     'UCMzVa7B8UEdrvUGsPmSgyjA': {'name': 'Derem Kado🎁', 'tag': '#Derem_live', 'region': Region.INA},
     'UC5yckZliCkuaEFbqzLBD7hQ': {'name': 'Reza Avanluna🌒☁️', 'tag': '#REZA_AVANLIVE', 'region': Region.INA},
+    'UCIBj1-d71vKjRftiauF50pg': {'name': 'Hyona Elatiora🐾🏵', 'tag': '#Hyona_Live', 'region': Region.INA},
+    'UCoJ0Ct-jdas4cLPpSp06gZg': {'name': 'Xia Ekavira⚗️🎼', 'tag': '#Xia_Live', 'region': Region.INA},
+    'UCahgMxSIQ2zIRrPKhM6Mjvg': {'name': 'Mika Melatika👻📌', 'tag': '#Mika_Live', 'region': Region.INA},
+    'UC4yNIKGvy-YUrwYupVdLDXA': {'name': 'Ike Eveland🖋️', 'tag': '#IkeStreamland', 'region': Region.INA},
+    'UCIM92Ok_spNKLVB5TsgwseQ': {'name': 'Mysta Rias🕵️‍♂️🦊', 'tag': '#MystaLive', 'region': Region.INA},
+    'UCckdfYDGrjojJM28n5SHYrA': {'name': 'Vox Akuma👹🧧', 'tag': '#VoxPopuLIVE', 'region': Region.INA},
+    'UC7Gb7Uawe20QyFibhLl1lzA': {'name': 'Luca Kaneshiro🦁💰', 'tag': '#lucalive', 'region': Region.INA},
+    'UCG0rzBZV_QMP4MtWg6IjhEA': {'name': 'Shu Yamino👟☯️', 'tag': '#ShuYamino', 'region': Region.INA},
+    'UCQ1zGxHrfEmmW4CPpBx9-qw': {'name': 'Alban Knox🎭🕒', 'tag': '#AlbanLive', 'region': Region.INA},
+    'UCSc_KzY_9WYAx9LghggjVRA': {'name': 'Yugo Asuma🎧', 'tag': '#YugoONAIR', 'region': Region.INA},
+    'UCGhqxhovNfaPBpxfCruy9EA': {'name': 'Fulgur Ovid⚡️🐑', 'tag': '#FulgurOvidHere', 'region': Region.INA},
+    'UCuuAb_72QzK0M1USPMEl1yw': {'name': 'Sonny Brisko🔗🤲', 'tag': '#SonnyLive', 'region': Region.INA},
+    'UChJ5FTsHOu72_5OVx0rvsvQ': {'name': 'Uki Violeta🔮🌌', 'tag': '#UkiLive', 'region': Region.INA},
 
 
     # nijisanji en
@@ -204,6 +222,9 @@ channels = {
     'UCeGendL8CO5RkffB6IFwHow': {'name': '세피나/Seffyna💗🌕', 'tag': '#Seffy_live', 'region': Region.KOR},
     'UCyqzU2nq7eGNi4kN0uHx7TA': {'name': '송미아/Song Mia🍡', 'tag': '#mia_on', 'region': Region.KOR},
     'UCLjx3lqIkYkPCBJop8czJ2A': {'name': '반하다/Ban Hada🏴‍☠️', 'tag': '#hada_live', 'region': Region.KOR},
+    'UCrhhJPNsOqzNIkUfTABoSpg': {'name': '하윤/Ha Yun🎮🦭', 'tag': '#HaYun_Live', 'region': Region.KOR},
+    'UCX88Pe54pxbJDSGIyGrzNdg': {'name': '나세라/Na Sera🌸🌙', 'tag': '#Sera_live', 'region': Region.KOR},
+    'UCCJcCWrbQzz6eDhX4M1CUwg': {'name': '이온/Lee On🍰', 'tag': '#LeeOn_Air', 'region': Region.KOR},
 
     # にじさんじネットワーク
     'UCZYyhgoV314CM14zBD6vd4A': {'name': '天開司🎲', 'tag': '#天開司', 'region': Region.JPN},
