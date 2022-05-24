@@ -148,6 +148,7 @@ channels = {
     'UCAQDFeCTVdx90GtwohwjHzQ': {'name': '天ヶ瀬むゆ💭', 'tag': '#夢遊旅行', 'region': Region.JPN},
     'UCtHY-tP0dyykhTRMmnfPs_g': {'name': '海妹四葉🍀', 'tag': '#428LIVE', 'region': Region.JPN},
     'UCe22Bcwd_GCpTjLxn83zl7A': {'name': '先斗寧🫐', 'tag': '#ぽんとらいぶ', 'region': Region.JPN},
+    'UCgIfLpQvelloDi8I0Ycbwpg': {'name': '壱百満天原サロメ💯🦂', 'tag': '#サロメ満点配信ですわ', 'region': Region.JPN},
 
     # nijisanji id
     'UCbLgcjfsUaCUgJh9SVit8kw': {'name': 'NIJISANJI ID Official', 'tag': '', 'region': Region.INA},
